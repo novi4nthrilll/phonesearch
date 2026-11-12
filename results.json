@@ -1,0 +1,595 @@
+[
+  {
+    "data": {
+      "success": true,
+      "raw_input": "081288889999",
+      "is_valid": true,
+      "is_possible": true,
+      "country_code": 62,
+      "national_number": "81288889999",
+      "region_code": "ID",
+      "formats": {
+        "e164": "+6281288889999",
+        "international": "+62 812-8888-9999",
+        "national": "0812-8888-9999",
+        "rfc3966": "tel:+62-812-8888-9999"
+      },
+      "carrier": "Telkomsel",
+      "location": "Indonesia",
+      "timezones": [
+        "Asia/Jakarta"
+      ],
+      "number_type": "Mobile (Seluler)",
+      "indonesia_hlr": {
+        "operator": "Telkomsel",
+        "brand": "simPATI / Halo",
+        "type": "Mobile",
+        "estimated_region": "Jabodetabek",
+        "prefix": "0812"
+      }
+    },
+    "osint": {
+      "platforms": [
+        {
+          "name": "WhatsApp Direct Chat",
+          "url": "https://wa.me/6281288889999",
+          "description": "Buka chat WhatsApp langsung tanpa simpan kontak"
+        },
+        {
+          "name": "Telegram Quick Link",
+          "url": "https://t.me/+6281288889999",
+          "description": "Cek akun Telegram yang terhubung dengan nomor ini"
+        }
+      ],
+      "reputation_lookups": [
+        {
+          "name": "Truecaller Search",
+          "url": "https://www.truecaller.com/search/6281288889999",
+          "description": "Pencarian identitas publik via Truecaller Web"
+        },
+        {
+          "name": "Sync.me Search",
+          "url": "https://sync.me/search/?number=6281288889999",
+          "description": "Direktori Caller ID global & reverse phone lookup"
+        },
+        {
+          "name": "Kredibel.co.id (Cek Penipuan Indonesia)",
+          "url": "https://www.kredibel.co.id/search/phone/081288889999",
+          "description": "Cek rekam jejak laporan penipuan di komunitas Indonesia"
+        }
+      ],
+      "google_dorks": [
+        {
+          "title": "Jejak Media Sosial (FB, IG, X, LinkedIn, TikTok)",
+          "dork": "(site:facebook.com | site:instagram.com | site:twitter.com | site:x.com | site:linkedin.com | site:tiktok.com) (\"081288889999\" | \"+6281288889999\" | \"+62 812-8888-9999\")",
+          "search_url": "https://www.google.com/search?q=%28site%3Afacebook.com%20%7C%20site%3Ainstagram.com%20%7C%20site%3Atwitter.com%20%7C%20site%3Ax.com%20%7C%20site%3Alinkedin.com%20%7C%20site%3Atiktok.com%29%20%28%22081288889999%22%20%7C%20%22%2B6281288889999%22%20%7C%20%22%2B62%20812-8888-9999%22%29"
+        },
+        {
+          "title": "Dokumen Publik, Database, & Paste Leak",
+          "dork": "(filetype:pdf | filetype:xlsx | filetype:csv | site:pastebin.com | site:github.com) (\"081288889999\" | \"+6281288889999\")",
+          "search_url": "https://www.google.com/search?q=%28filetype%3Apdf%20%7C%20filetype%3Axlsx%20%7C%20filetype%3Acsv%20%7C%20site%3Apastebin.com%20%7C%20site%3Agithub.com%29%20%28%22081288889999%22%20%7C%20%22%2B6281288889999%22%29"
+        },
+        {
+          "title": "Forum Jual-Beli & Iklan Baris",
+          "dork": "(site:olx.co.id | site:kaskus.co.id | site:carousell.app) (\"081288889999\" | \"+6281288889999\")",
+          "search_url": "https://www.google.com/search?q=%28site%3Aolx.co.id%20%7C%20site%3Akaskus.co.id%20%7C%20site%3Acarousell.app%29%20%28%22081288889999%22%20%7C%20%22%2B6281288889999%22%29"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "success": true,
+      "raw_input": "085612345678",
+      "is_valid": true,
+      "is_possible": true,
+      "country_code": 62,
+      "national_number": "85612345678",
+      "region_code": "ID",
+      "formats": {
+        "e164": "+6285612345678",
+        "international": "+62 856-1234-5678",
+        "national": "0856-1234-5678",
+        "rfc3966": "tel:+62-856-1234-5678"
+      },
+      "carrier": "IM3",
+      "location": "Indonesia",
+      "timezones": [
+        "Asia/Jakarta"
+      ],
+      "number_type": "Mobile (Seluler)",
+      "indonesia_hlr": {
+        "operator": "Indosat Ooredoo",
+        "brand": "IM3",
+        "type": "Mobile",
+        "estimated_region": "Jakarta / Tangerang",
+        "prefix": "0856"
+      }
+    },
+    "osint": {
+      "platforms": [
+        {
+          "name": "WhatsApp Direct Chat",
+          "url": "https://wa.me/6285612345678",
+          "description": "Buka chat WhatsApp langsung tanpa simpan kontak"
+        },
+        {
+          "name": "Telegram Quick Link",
+          "url": "https://t.me/+6285612345678",
+          "description": "Cek akun Telegram yang terhubung dengan nomor ini"
+        }
+      ],
+      "reputation_lookups": [
+        {
+          "name": "Truecaller Search",
+          "url": "https://www.truecaller.com/search/6285612345678",
+          "description": "Pencarian identitas publik via Truecaller Web"
+        },
+        {
+          "name": "Sync.me Search",
+          "url": "https://sync.me/search/?number=6285612345678",
+          "description": "Direktori Caller ID global & reverse phone lookup"
+        },
+        {
+          "name": "Kredibel.co.id (Cek Penipuan Indonesia)",
+          "url": "https://www.kredibel.co.id/search/phone/085612345678",
+          "description": "Cek rekam jejak laporan penipuan di komunitas Indonesia"
+        }
+      ],
+      "google_dorks": [
+        {
+          "title": "Jejak Media Sosial (FB, IG, X, LinkedIn, TikTok)",
+          "dork": "(site:facebook.com | site:instagram.com | site:twitter.com | site:x.com | site:linkedin.com | site:tiktok.com) (\"085612345678\" | \"+6285612345678\" | \"+62 856-1234-5678\")",
+          "search_url": "https://www.google.com/search?q=%28site%3Afacebook.com%20%7C%20site%3Ainstagram.com%20%7C%20site%3Atwitter.com%20%7C%20site%3Ax.com%20%7C%20site%3Alinkedin.com%20%7C%20site%3Atiktok.com%29%20%28%22085612345678%22%20%7C%20%22%2B6285612345678%22%20%7C%20%22%2B62%20856-1234-5678%22%29"
+        },
+        {
+          "title": "Dokumen Publik, Database, & Paste Leak",
+          "dork": "(filetype:pdf | filetype:xlsx | filetype:csv | site:pastebin.com | site:github.com) (\"085612345678\" | \"+6285612345678\")",
+          "search_url": "https://www.google.com/search?q=%28filetype%3Apdf%20%7C%20filetype%3Axlsx%20%7C%20filetype%3Acsv%20%7C%20site%3Apastebin.com%20%7C%20site%3Agithub.com%29%20%28%22085612345678%22%20%7C%20%22%2B6285612345678%22%29"
+        },
+        {
+          "title": "Forum Jual-Beli & Iklan Baris",
+          "dork": "(site:olx.co.id | site:kaskus.co.id | site:carousell.app) (\"085612345678\" | \"+6285612345678\")",
+          "search_url": "https://www.google.com/search?q=%28site%3Aolx.co.id%20%7C%20site%3Akaskus.co.id%20%7C%20site%3Acarousell.app%29%20%28%22085612345678%22%20%7C%20%22%2B6285612345678%22%29"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "success": true,
+      "raw_input": "081812345678",
+      "is_valid": true,
+      "is_possible": true,
+      "country_code": 62,
+      "national_number": "81812345678",
+      "region_code": "ID",
+      "formats": {
+        "e164": "+6281812345678",
+        "international": "+62 818-1234-5678",
+        "national": "0818-1234-5678",
+        "rfc3966": "tel:+62-818-1234-5678"
+      },
+      "carrier": "XL",
+      "location": "Indonesia",
+      "timezones": [
+        "Asia/Jakarta",
+        "Asia/Makassar"
+      ],
+      "number_type": "Mobile (Seluler)",
+      "indonesia_hlr": {
+        "operator": "XL Axiata",
+        "brand": "XL Prabayar",
+        "type": "Mobile",
+        "estimated_region": "Jabodetabek",
+        "prefix": "0818"
+      }
+    },
+    "osint": {
+      "platforms": [
+        {
+          "name": "WhatsApp Direct Chat",
+          "url": "https://wa.me/6281812345678",
+          "description": "Buka chat WhatsApp langsung tanpa simpan kontak"
+        },
+        {
+          "name": "Telegram Quick Link",
+          "url": "https://t.me/+6281812345678",
+          "description": "Cek akun Telegram yang terhubung dengan nomor ini"
+        }
+      ],
+      "reputation_lookups": [
+        {
+          "name": "Truecaller Search",
+          "url": "https://www.truecaller.com/search/6281812345678",
+          "description": "Pencarian identitas publik via Truecaller Web"
+        },
+        {
+          "name": "Sync.me Search",
+          "url": "https://sync.me/search/?number=6281812345678",
+          "description": "Direktori Caller ID global & reverse phone lookup"
+        },
+        {
+          "name": "Kredibel.co.id (Cek Penipuan Indonesia)",
+          "url": "https://www.kredibel.co.id/search/phone/081812345678",
+          "description": "Cek rekam jejak laporan penipuan di komunitas Indonesia"
+        }
+      ],
+      "google_dorks": [
+        {
+          "title": "Jejak Media Sosial (FB, IG, X, LinkedIn, TikTok)",
+          "dork": "(site:facebook.com | site:instagram.com | site:twitter.com | site:x.com | site:linkedin.com | site:tiktok.com) (\"081812345678\" | \"+6281812345678\" | \"+62 818-1234-5678\")",
+          "search_url": "https://www.google.com/search?q=%28site%3Afacebook.com%20%7C%20site%3Ainstagram.com%20%7C%20site%3Atwitter.com%20%7C%20site%3Ax.com%20%7C%20site%3Alinkedin.com%20%7C%20site%3Atiktok.com%29%20%28%22081812345678%22%20%7C%20%22%2B6281812345678%22%20%7C%20%22%2B62%20818-1234-5678%22%29"
+        },
+        {
+          "title": "Dokumen Publik, Database, & Paste Leak",
+          "dork": "(filetype:pdf | filetype:xlsx | filetype:csv | site:pastebin.com | site:github.com) (\"081812345678\" | \"+6281812345678\")",
+          "search_url": "https://www.google.com/search?q=%28filetype%3Apdf%20%7C%20filetype%3Axlsx%20%7C%20filetype%3Acsv%20%7C%20site%3Apastebin.com%20%7C%20site%3Agithub.com%29%20%28%22081812345678%22%20%7C%20%22%2B6281812345678%22%29"
+        },
+        {
+          "title": "Forum Jual-Beli & Iklan Baris",
+          "dork": "(site:olx.co.id | site:kaskus.co.id | site:carousell.app) (\"081812345678\" | \"+6281812345678\")",
+          "search_url": "https://www.google.com/search?q=%28site%3Aolx.co.id%20%7C%20site%3Akaskus.co.id%20%7C%20site%3Acarousell.app%29%20%28%22081812345678%22%20%7C%20%22%2B6281812345678%22%29"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "success": true,
+      "raw_input": "089612345678",
+      "is_valid": true,
+      "is_possible": true,
+      "country_code": 62,
+      "national_number": "89612345678",
+      "region_code": "ID",
+      "formats": {
+        "e164": "+6289612345678",
+        "international": "+62 896-1234-5678",
+        "national": "0896-1234-5678",
+        "rfc3966": "tel:+62-896-1234-5678"
+      },
+      "carrier": "3",
+      "location": "Indonesia",
+      "timezones": [
+        "Asia/Jakarta"
+      ],
+      "number_type": "Mobile (Seluler)",
+      "indonesia_hlr": {
+        "operator": "Tri (3) Indonesia",
+        "brand": "3 (Tri)",
+        "type": "Mobile",
+        "estimated_region": "Indonesia (Wilayah spesifik bervariasi / Alokasi Nasional)",
+        "prefix": "0896"
+      }
+    },
+    "osint": {
+      "platforms": [
+        {
+          "name": "WhatsApp Direct Chat",
+          "url": "https://wa.me/6289612345678",
+          "description": "Buka chat WhatsApp langsung tanpa simpan kontak"
+        },
+        {
+          "name": "Telegram Quick Link",
+          "url": "https://t.me/+6289612345678",
+          "description": "Cek akun Telegram yang terhubung dengan nomor ini"
+        }
+      ],
+      "reputation_lookups": [
+        {
+          "name": "Truecaller Search",
+          "url": "https://www.truecaller.com/search/6289612345678",
+          "description": "Pencarian identitas publik via Truecaller Web"
+        },
+        {
+          "name": "Sync.me Search",
+          "url": "https://sync.me/search/?number=6289612345678",
+          "description": "Direktori Caller ID global & reverse phone lookup"
+        },
+        {
+          "name": "Kredibel.co.id (Cek Penipuan Indonesia)",
+          "url": "https://www.kredibel.co.id/search/phone/089612345678",
+          "description": "Cek rekam jejak laporan penipuan di komunitas Indonesia"
+        }
+      ],
+      "google_dorks": [
+        {
+          "title": "Jejak Media Sosial (FB, IG, X, LinkedIn, TikTok)",
+          "dork": "(site:facebook.com | site:instagram.com | site:twitter.com | site:x.com | site:linkedin.com | site:tiktok.com) (\"089612345678\" | \"+6289612345678\" | \"+62 896-1234-5678\")",
+          "search_url": "https://www.google.com/search?q=%28site%3Afacebook.com%20%7C%20site%3Ainstagram.com%20%7C%20site%3Atwitter.com%20%7C%20site%3Ax.com%20%7C%20site%3Alinkedin.com%20%7C%20site%3Atiktok.com%29%20%28%22089612345678%22%20%7C%20%22%2B6289612345678%22%20%7C%20%22%2B62%20896-1234-5678%22%29"
+        },
+        {
+          "title": "Dokumen Publik, Database, & Paste Leak",
+          "dork": "(filetype:pdf | filetype:xlsx | filetype:csv | site:pastebin.com | site:github.com) (\"089612345678\" | \"+6289612345678\")",
+          "search_url": "https://www.google.com/search?q=%28filetype%3Apdf%20%7C%20filetype%3Axlsx%20%7C%20filetype%3Acsv%20%7C%20site%3Apastebin.com%20%7C%20site%3Agithub.com%29%20%28%22089612345678%22%20%7C%20%22%2B6289612345678%22%29"
+        },
+        {
+          "title": "Forum Jual-Beli & Iklan Baris",
+          "dork": "(site:olx.co.id | site:kaskus.co.id | site:carousell.app) (\"089612345678\" | \"+6289612345678\")",
+          "search_url": "https://www.google.com/search?q=%28site%3Aolx.co.id%20%7C%20site%3Akaskus.co.id%20%7C%20site%3Acarousell.app%29%20%28%22089612345678%22%20%7C%20%22%2B6289612345678%22%29"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "success": true,
+      "raw_input": "088112345678",
+      "is_valid": true,
+      "is_possible": true,
+      "country_code": 62,
+      "national_number": "88112345678",
+      "region_code": "ID",
+      "formats": {
+        "e164": "+6288112345678",
+        "international": "+62 881-1234-5678",
+        "national": "0881-1234-5678",
+        "rfc3966": "tel:+62-881-1234-5678"
+      },
+      "carrier": "Smartfren",
+      "location": "Indonesia",
+      "timezones": [
+        "Asia/Jakarta"
+      ],
+      "number_type": "Mobile (Seluler)",
+      "indonesia_hlr": {
+        "operator": "Smartfren",
+        "brand": "Smartfren",
+        "type": "Mobile",
+        "estimated_region": "Indonesia (Wilayah spesifik bervariasi / Alokasi Nasional)",
+        "prefix": "0881"
+      }
+    },
+    "osint": {
+      "platforms": [
+        {
+          "name": "WhatsApp Direct Chat",
+          "url": "https://wa.me/6288112345678",
+          "description": "Buka chat WhatsApp langsung tanpa simpan kontak"
+        },
+        {
+          "name": "Telegram Quick Link",
+          "url": "https://t.me/+6288112345678",
+          "description": "Cek akun Telegram yang terhubung dengan nomor ini"
+        }
+      ],
+      "reputation_lookups": [
+        {
+          "name": "Truecaller Search",
+          "url": "https://www.truecaller.com/search/6288112345678",
+          "description": "Pencarian identitas publik via Truecaller Web"
+        },
+        {
+          "name": "Sync.me Search",
+          "url": "https://sync.me/search/?number=6288112345678",
+          "description": "Direktori Caller ID global & reverse phone lookup"
+        },
+        {
+          "name": "Kredibel.co.id (Cek Penipuan Indonesia)",
+          "url": "https://www.kredibel.co.id/search/phone/088112345678",
+          "description": "Cek rekam jejak laporan penipuan di komunitas Indonesia"
+        }
+      ],
+      "google_dorks": [
+        {
+          "title": "Jejak Media Sosial (FB, IG, X, LinkedIn, TikTok)",
+          "dork": "(site:facebook.com | site:instagram.com | site:twitter.com | site:x.com | site:linkedin.com | site:tiktok.com) (\"088112345678\" | \"+6288112345678\" | \"+62 881-1234-5678\")",
+          "search_url": "https://www.google.com/search?q=%28site%3Afacebook.com%20%7C%20site%3Ainstagram.com%20%7C%20site%3Atwitter.com%20%7C%20site%3Ax.com%20%7C%20site%3Alinkedin.com%20%7C%20site%3Atiktok.com%29%20%28%22088112345678%22%20%7C%20%22%2B6288112345678%22%20%7C%20%22%2B62%20881-1234-5678%22%29"
+        },
+        {
+          "title": "Dokumen Publik, Database, & Paste Leak",
+          "dork": "(filetype:pdf | filetype:xlsx | filetype:csv | site:pastebin.com | site:github.com) (\"088112345678\" | \"+6288112345678\")",
+          "search_url": "https://www.google.com/search?q=%28filetype%3Apdf%20%7C%20filetype%3Axlsx%20%7C%20filetype%3Acsv%20%7C%20site%3Apastebin.com%20%7C%20site%3Agithub.com%29%20%28%22088112345678%22%20%7C%20%22%2B6288112345678%22%29"
+        },
+        {
+          "title": "Forum Jual-Beli & Iklan Baris",
+          "dork": "(site:olx.co.id | site:kaskus.co.id | site:carousell.app) (\"088112345678\" | \"+6288112345678\")",
+          "search_url": "https://www.google.com/search?q=%28site%3Aolx.co.id%20%7C%20site%3Akaskus.co.id%20%7C%20site%3Acarousell.app%29%20%28%22088112345678%22%20%7C%20%22%2B6288112345678%22%29"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "success": true,
+      "raw_input": "0213840000",
+      "is_valid": true,
+      "is_possible": true,
+      "country_code": 62,
+      "national_number": "213840000",
+      "region_code": "ID",
+      "formats": {
+        "e164": "+62213840000",
+        "international": "+62 21 3840000",
+        "national": "(021) 3840000",
+        "rfc3966": "tel:+62-21-3840000"
+      },
+      "carrier": "Unknown / Unregistered Prefix",
+      "location": "Jabodetabek",
+      "timezones": [
+        "Asia/Jakarta"
+      ],
+      "number_type": "Fixed Line (Telepon Kabel)",
+      "indonesia_hlr": {
+        "operator": "Unknown / Unregistered Prefix",
+        "brand": "Unknown",
+        "type": "Unknown",
+        "prefix": "0(02",
+        "estimated_region": "Unknown"
+      }
+    },
+    "osint": {
+      "platforms": [
+        {
+          "name": "WhatsApp Direct Chat",
+          "url": "https://wa.me/62213840000",
+          "description": "Buka chat WhatsApp langsung tanpa simpan kontak"
+        },
+        {
+          "name": "Telegram Quick Link",
+          "url": "https://t.me/+62213840000",
+          "description": "Cek akun Telegram yang terhubung dengan nomor ini"
+        }
+      ],
+      "reputation_lookups": [
+        {
+          "name": "Truecaller Search",
+          "url": "https://www.truecaller.com/search/62213840000",
+          "description": "Pencarian identitas publik via Truecaller Web"
+        },
+        {
+          "name": "Sync.me Search",
+          "url": "https://sync.me/search/?number=62213840000",
+          "description": "Direktori Caller ID global & reverse phone lookup"
+        },
+        {
+          "name": "Kredibel.co.id (Cek Penipuan Indonesia)",
+          "url": "https://www.kredibel.co.id/search/phone/(021)3840000",
+          "description": "Cek rekam jejak laporan penipuan di komunitas Indonesia"
+        }
+      ],
+      "google_dorks": [
+        {
+          "title": "Jejak Media Sosial (FB, IG, X, LinkedIn, TikTok)",
+          "dork": "(site:facebook.com | site:instagram.com | site:twitter.com | site:x.com | site:linkedin.com | site:tiktok.com) (\"(021)3840000\" | \"+62213840000\" | \"+62 21 3840000\")",
+          "search_url": "https://www.google.com/search?q=%28site%3Afacebook.com%20%7C%20site%3Ainstagram.com%20%7C%20site%3Atwitter.com%20%7C%20site%3Ax.com%20%7C%20site%3Alinkedin.com%20%7C%20site%3Atiktok.com%29%20%28%22%28021%293840000%22%20%7C%20%22%2B62213840000%22%20%7C%20%22%2B62%2021%203840000%22%29"
+        },
+        {
+          "title": "Dokumen Publik, Database, & Paste Leak",
+          "dork": "(filetype:pdf | filetype:xlsx | filetype:csv | site:pastebin.com | site:github.com) (\"(021)3840000\" | \"+62213840000\")",
+          "search_url": "https://www.google.com/search?q=%28filetype%3Apdf%20%7C%20filetype%3Axlsx%20%7C%20filetype%3Acsv%20%7C%20site%3Apastebin.com%20%7C%20site%3Agithub.com%29%20%28%22%28021%293840000%22%20%7C%20%22%2B62213840000%22%29"
+        },
+        {
+          "title": "Forum Jual-Beli & Iklan Baris",
+          "dork": "(site:olx.co.id | site:kaskus.co.id | site:carousell.app) (\"(021)3840000\" | \"+62213840000\")",
+          "search_url": "https://www.google.com/search?q=%28site%3Aolx.co.id%20%7C%20site%3Akaskus.co.id%20%7C%20site%3Acarousell.app%29%20%28%22%28021%293840000%22%20%7C%20%22%2B62213840000%22%29"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "success": true,
+      "raw_input": "+14155552671",
+      "is_valid": true,
+      "is_possible": true,
+      "country_code": 1,
+      "national_number": "4155552671",
+      "region_code": "US",
+      "formats": {
+        "e164": "+14155552671",
+        "international": "+1 415-555-2671",
+        "national": "(415) 555-2671",
+        "rfc3966": "tel:+1-415-555-2671"
+      },
+      "carrier": "Unknown",
+      "location": "San Francisco, CA",
+      "timezones": [
+        "America/Los_Angeles"
+      ],
+      "number_type": "Fixed Line / Mobile",
+      "indonesia_hlr": null
+    },
+    "osint": {
+      "platforms": [
+        {
+          "name": "WhatsApp Direct Chat",
+          "url": "https://wa.me/14155552671",
+          "description": "Buka chat WhatsApp langsung tanpa simpan kontak"
+        },
+        {
+          "name": "Telegram Quick Link",
+          "url": "https://t.me/+14155552671",
+          "description": "Cek akun Telegram yang terhubung dengan nomor ini"
+        }
+      ],
+      "reputation_lookups": [
+        {
+          "name": "Truecaller Search",
+          "url": "https://www.truecaller.com/search/14155552671",
+          "description": "Pencarian identitas publik via Truecaller Web"
+        },
+        {
+          "name": "Sync.me Search",
+          "url": "https://sync.me/search/?number=14155552671",
+          "description": "Direktori Caller ID global & reverse phone lookup"
+        }
+      ],
+      "google_dorks": [
+        {
+          "title": "Jejak Media Sosial (FB, IG, X, LinkedIn, TikTok)",
+          "dork": "(site:facebook.com | site:instagram.com | site:twitter.com | site:x.com | site:linkedin.com | site:tiktok.com) (\"(415)5552671\" | \"+14155552671\" | \"+1 415-555-2671\")",
+          "search_url": "https://www.google.com/search?q=%28site%3Afacebook.com%20%7C%20site%3Ainstagram.com%20%7C%20site%3Atwitter.com%20%7C%20site%3Ax.com%20%7C%20site%3Alinkedin.com%20%7C%20site%3Atiktok.com%29%20%28%22%28415%295552671%22%20%7C%20%22%2B14155552671%22%20%7C%20%22%2B1%20415-555-2671%22%29"
+        },
+        {
+          "title": "Dokumen Publik, Database, & Paste Leak",
+          "dork": "(filetype:pdf | filetype:xlsx | filetype:csv | site:pastebin.com | site:github.com) (\"(415)5552671\" | \"+14155552671\")",
+          "search_url": "https://www.google.com/search?q=%28filetype%3Apdf%20%7C%20filetype%3Axlsx%20%7C%20filetype%3Acsv%20%7C%20site%3Apastebin.com%20%7C%20site%3Agithub.com%29%20%28%22%28415%295552671%22%20%7C%20%22%2B14155552671%22%29"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "success": true,
+      "raw_input": "+6561234567",
+      "is_valid": true,
+      "is_possible": true,
+      "country_code": 65,
+      "national_number": "61234567",
+      "region_code": "SG",
+      "formats": {
+        "e164": "+6561234567",
+        "international": "+65 6123 4567",
+        "national": "6123 4567",
+        "rfc3966": "tel:+65-6123-4567"
+      },
+      "carrier": "Unknown",
+      "location": "Singapura",
+      "timezones": [
+        "Asia/Singapore"
+      ],
+      "number_type": "Fixed Line (Telepon Kabel)",
+      "indonesia_hlr": null
+    },
+    "osint": {
+      "platforms": [
+        {
+          "name": "WhatsApp Direct Chat",
+          "url": "https://wa.me/6561234567",
+          "description": "Buka chat WhatsApp langsung tanpa simpan kontak"
+        },
+        {
+          "name": "Telegram Quick Link",
+          "url": "https://t.me/+6561234567",
+          "description": "Cek akun Telegram yang terhubung dengan nomor ini"
+        }
+      ],
+      "reputation_lookups": [
+        {
+          "name": "Truecaller Search",
+          "url": "https://www.truecaller.com/search/6561234567",
+          "description": "Pencarian identitas publik via Truecaller Web"
+        },
+        {
+          "name": "Sync.me Search",
+          "url": "https://sync.me/search/?number=6561234567",
+          "description": "Direktori Caller ID global & reverse phone lookup"
+        }
+      ],
+      "google_dorks": [
+        {
+          "title": "Jejak Media Sosial (FB, IG, X, LinkedIn, TikTok)",
+          "dork": "(site:facebook.com | site:instagram.com | site:twitter.com | site:x.com | site:linkedin.com | site:tiktok.com) (\"61234567\" | \"+6561234567\" | \"+65 6123 4567\")",
+          "search_url": "https://www.google.com/search?q=%28site%3Afacebook.com%20%7C%20site%3Ainstagram.com%20%7C%20site%3Atwitter.com%20%7C%20site%3Ax.com%20%7C%20site%3Alinkedin.com%20%7C%20site%3Atiktok.com%29%20%28%2261234567%22%20%7C%20%22%2B6561234567%22%20%7C%20%22%2B65%206123%204567%22%29"
+        },
+        {
+          "title": "Dokumen Publik, Database, & Paste Leak",
+          "dork": "(filetype:pdf | filetype:xlsx | filetype:csv | site:pastebin.com | site:github.com) (\"61234567\" | \"+6561234567\")",
+          "search_url": "https://www.google.com/search?q=%28filetype%3Apdf%20%7C%20filetype%3Axlsx%20%7C%20filetype%3Acsv%20%7C%20site%3Apastebin.com%20%7C%20site%3Agithub.com%29%20%28%2261234567%22%20%7C%20%22%2B6561234567%22%29"
+        }
+      ]
+    }
+  }
+]
