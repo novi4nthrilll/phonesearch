@@ -1,0 +1,92 @@
+{
+  "database_version": "1.0",
+  "updated_at": "2026-11-13",
+  "records": [
+    {
+      "number": "+6281299990001",
+      "national": "081299990001",
+      "category": "SCAM_MALWARE",
+      "risk_level": "HIGH",
+      "reports_count": 38,
+      "tags": [
+        "Kurir J&T Palsu",
+        "Kirim File APK Resi",
+        "Pencurian Rekening"
+      ],
+      "comments": [
+        "Mengaku kurir paket kirim file foto paket format .apk, jangan diinstall!",
+        "Modus resi paket J&T, pas diinstall saldo rekening terkuras"
+      ],
+      "last_reported": "2026-11-10 14:22:10"
+    },
+    {
+      "number": "+6285600001122",
+      "national": "085600001122",
+      "category": "SCAM_PHISHING",
+      "risk_level": "HIGH",
+      "reports_count": 25,
+      "tags": [
+        "CS BCA / BRI Palsu",
+        "Minta Kode OTP",
+        "Phishing Link"
+      ],
+      "comments": [
+        "Telepon ngaku dari call center bank mengabarkan ada transaksi mencurigakan, minta kode OTP",
+        "Nomor penipu mengaku customer service bank meminta update tarif transaksi"
+      ],
+      "last_reported": "2026-11-11 09:15:33"
+    },
+    {
+      "number": "+6287811112233",
+      "national": "087811112233",
+      "category": "SCAM_JOB",
+      "risk_level": "HIGH",
+      "reports_count": 19,
+      "tags": [
+        "Loker Freelance Palsu",
+        "Tugas Like Video YouTube",
+        "Deposit Uang"
+      ],
+      "comments": [
+        "Ditawari pekerjaan sampingan cuma like video tiktok dan subscribe youtube, ujung-ujungnya disuruh deposit",
+        "Penipuan paruh waktu / part time scam deposit"
+      ],
+      "last_reported": "2026-11-12 11:45:00"
+    },
+    {
+      "number": "+6288822223344",
+      "national": "088822223344",
+      "category": "PINJOL_TEROR",
+      "risk_level": "HIGH",
+      "reports_count": 42,
+      "tags": [
+        "Pinjol Ilegal",
+        "Debt Collector Teror",
+        "Spam WhatsApp Kasar"
+      ],
+      "comments": [
+        "Debt collector pinjaman online ilegal padahal tidak pernah meminjam uang",
+        "Spam chat dan telepon kasar mengancam sebar data kontak darurat"
+      ],
+      "last_reported": "2026-11-12 16:30:20"
+    },
+    {
+      "number": "+622150889900",
+      "national": "02150889900",
+      "category": "TELEMARKETING",
+      "risk_level": "MEDIUM",
+      "reports_count": 14,
+      "tags": [
+        "Telemarketing Asuransi",
+        "Tawaran Kartu Kredit",
+        "Spam Call Robot"
+      ],
+      "comments": [
+        "Telepon berkali-kali menawarkan produk asuransi dan kartu kredit",
+        "Sales marketing agresif sangat mengganggu di jam kerja"
+      ],
+      "last_reported": "2026-11-08 10:00:15"
+    }
+  ]
+}
+

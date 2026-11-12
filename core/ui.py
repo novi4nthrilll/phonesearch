@@ -12,13 +12,28 @@ BANNER_ART = r"""
  [bold cyan]| |_) | |_| | | | |  \| |  _| \___ \|  _|   / _ \ | |_) | |   | |_| |[/bold cyan]
  [bold cyan]|  __/|  _  | |_| | |\  | |___ ___) | |___ / ___ \|  _ <| |___|  _  |[/bold cyan]
  [bold cyan]|_|   |_| |_|\___/|_| \_|_____|____/|_____/_/   \_\_| \_\\____|_| |_|[/bold cyan]
- [dim]-- Phone Intelligence & OSINT Reconnaissance Tool (v1.0) --[/dim]
+ [dim]-- Phone Intelligence & OSINT Reconnaissance Tool (v2.0) --[/dim]
 """
 
 def print_banner():
     console.print(BANNER_ART)
 
-def display_analysis(data: dict, osint: dict):
+def render_risk_bar(score: int, total_blocks: int = 20) -> str:
+    """Renders a colored ASCII risk gauge bar."""
+    filled = int((score / 100) * total_blocks)
+    empty = total_blocks - filled
+    
+    if score >= 65:
+        color = "red"
+    elif score >= 35:
+        color = "yellow"
+    else:
+        color = "green"
+        
+    bar = f"[{color}]{'█' * filled}[/{color}][dim]{'░' * empty}[/dim]"
+    return f"{bar} [{color}]{score}%[/{color}]"
+
+def display_analysis(data: dict, osint: dict, risk: dict = None):
     """
     Renders rich formatted panels and tables for phone reconnaissance results.
     """
@@ -68,7 +83,42 @@ def display_analysis(data: dict, osint: dict):
     console.print(spec_table)
     console.print(op_table)
 
-    # 3. Direct Platform Links
+    # 3. Risk & Fraud Assessment (Feature 2)
+    if risk:
+        border = "red" if risk["level"] == "HIGH" else ("yellow" if risk["level"] == "MEDIUM" else "green")
+        risk_content = []
+        
+        # Risk Score Meter
+        bar_str = render_risk_bar(risk["score"])
+        risk_content.append(f"Tingkat Risiko : {risk['badge']}")
+        risk_content.append(f"Indeks Skor    : {bar_str}\n")
+        
+        # Risk factors
+        risk_content.append("[bold]Faktor Analisis:[/bold]")
+        for f in risk["factors"]:
+            risk_content.append(f"  • {f}")
+
+        # Community Database Tagging if found
+        db_rec = risk.get("db_record")
+        if db_rec:
+            tags = " ".join([f"[black on yellow] #{t} [/black on yellow]" for t in db_rec.get("tags", [])])
+            risk_content.append(f"\n[bold]Tag Komunitas:[/bold] {tags}")
+            if db_rec.get("comments"):
+                risk_content.append("\n[bold]Laporan / Modus dari Korban:[/bold]")
+                for c in db_rec["comments"][:3]:
+                    risk_content.append(f'  💬 "[dim italic]{c}[/dim italic]"')
+
+        # Actionable recommendation
+        risk_content.append(f"\n[bold cyan]Rekomendasi Tindakan:[/bold cyan]\n👉 {risk['recommendation']}")
+
+        console.print(Panel(
+            "\n".join(risk_content),
+            title="🛡️ [bold]Evaluasi Risiko & Deteksi Penipuan (Spam/Scam Engine)[/bold]",
+            border_style=border,
+            box=box.ROUNDED,
+        ))
+
+    # 4. Direct Platform Links
     if osint and osint.get("platforms"):
         plat_table = Table(box=box.ROUNDED, expand=True, title="⚡ [bold green]Akses Langsung & Profiling[/bold green]")
         plat_table.add_column("Platform", style="green", width=25)
@@ -80,7 +130,7 @@ def display_analysis(data: dict, osint: dict):
         
         console.print(plat_table)
 
-    # 4. Caller ID & Public Reputation Lookups
+    # 5. Caller ID & Public Reputation Lookups
     if osint and osint.get("reputation_lookups"):
         rep_table = Table(box=box.ROUNDED, expand=True, title="🛡️ [bold yellow]Caller ID & Cek Reputasi Publik[/bold yellow]")
         rep_table.add_column("Layanan", style="yellow", width=25)
@@ -92,7 +142,7 @@ def display_analysis(data: dict, osint: dict):
 
         console.print(rep_table)
 
-    # 5. OSINT Google Dorks
+    # 6. OSINT Google Dorks
     if osint and osint.get("google_dorks"):
         dork_table = Table(box=box.ROUNDED, expand=True, title="🔎 [bold red]Google Dorks (Investigasi OSINT)[/bold red]")
         dork_table.add_column("Fokus Investigasi", style="red", width=25)
@@ -103,7 +153,7 @@ def display_analysis(data: dict, osint: dict):
             
         console.print(dork_table)
 
-    # 6. Live Web Reconnaissance (Hasil Pencarian Langsung dari Internet)
+    # 7. Live Web Reconnaissance (Hasil Pencarian Langsung dari Internet)
     if osint and "live_web" in osint:
         live = osint["live_web"]
         if live.get("connected") and live.get("categories"):
@@ -125,4 +175,25 @@ def display_analysis(data: dict, osint: dict):
                 border_style="yellow"
             ))
 
+def display_scam_list(records: list):
+    """Displays top reported scam numbers from the database."""
+    table = Table(box=box.ROUNDED, expand=True, title="🚨 [bold red]Daftar Nomor Penipuan & Spam Terbanyak Dilaporkan[/bold red]")
+    table.add_column("No", style="dim", width=4)
+    table.add_column("Nomor Telepon", style="bold yellow", width=18)
+    table.add_column("Kategori Modus", style="cyan", width=25)
+    table.add_column("Laporan", style="red", width=10)
+    table.add_column("Tag / Label Komunitas", style="white")
+    table.add_column("Terakhir Dilaporkan", style="dim", width=20)
 
+    for idx, rec in enumerate(records, 1):
+        tags_str = ", ".join(rec.get("tags", []))
+        table.add_row(
+            str(idx),
+            f"{rec.get('national', '-')} ({rec.get('number', '-')})",
+            rec.get("category", "-"),
+            f"{rec.get('reports_count', 1)}x",
+            tags_str,
+            rec.get("last_reported", "-")
+        )
+
+    console.print(table)
