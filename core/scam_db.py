@@ -14,9 +14,36 @@ CATEGORIES = {
     "OTHER_SUSPICIOUS": "Aktivitas Mencurigakan Lainnya",
 }
 
+
+def _clean_digits(number: str) -> str:
+    """Extract only digit characters from a string."""
+    return "".join(c for c in number if c.isdigit())
+
+
+def _normalize_subscriber(number: str) -> str:
+    """
+    Extracts the subscriber digits (without country code or leading zero).
+    '08123456789' → '8123456789'
+    '+6281234567890' → '81234567890'
+    '6281234567890' → '81234567890'
+    """
+    digits = _clean_digits(number)
+    if not digits:
+        return ""
+    # Strip Indonesia country code '62' prefix
+    if digits.startswith("62") and len(digits) > 10:
+        digits = digits[2:]
+    # Strip leading zero
+    if digits.startswith("0") and len(digits) > 9:
+        digits = digits[1:]
+    return digits
+
+
 class ScamDatabase:
     def __init__(self, db_path: Path = DB_PATH):
         self.db_path = db_path
+        self._cache: dict | None = None
+        self._cache_mtime: float = 0.0
         self._ensure_db()
 
     def _ensure_db(self):
@@ -26,59 +53,55 @@ class ScamDatabase:
             default_data = {
                 "database_version": "1.0",
                 "updated_at": datetime.now().strftime("%Y-%m-%d"),
-                "records": []
+                "records": [],
             }
             with open(self.db_path, "w", encoding="utf-8") as f:
                 json.dump(default_data, f, indent=2, ensure_ascii=False)
 
     def _load_data(self) -> dict:
+        """Load JSON with simple mtime-based cache to avoid redundant disk reads."""
         try:
+            current_mtime = self.db_path.stat().st_mtime
+            if self._cache is not None and current_mtime == self._cache_mtime:
+                return self._cache
             with open(self.db_path, "r", encoding="utf-8") as f:
-                return json.load(f)
+                self._cache = json.load(f)
+            self._cache_mtime = current_mtime
+            return self._cache
         except Exception:
             return {"database_version": "1.0", "records": []}
 
     def _save_data(self, data: dict):
         with open(self.db_path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
+        # Invalidate cache so next _load_data re-reads
+        self._cache = None
 
-    def _clean_digits(self, number: str) -> str:
-        return "".join(c for c in number if c.isdigit())
-
-    def lookup(self, number: str) -> dict | None:
+    def lookup(self, number: str) -> tuple[dict | None, dict | None]:
         """
         Looks up a phone number in the scam database.
-        Matches by raw string, E.164 (+62...), national (08...), or raw digits.
+        Returns (record, data) tuple where data is the full loaded dict,
+        so callers who need to modify + save can use the same object.
         """
-        digits = self._clean_digits(number)
-        if not digits:
-            return None
+        subscriber = _normalize_subscriber(number)
+        if not subscriber or len(subscriber) < 7:
+            return None, None
 
         data = self._load_data()
         for rec in data.get("records", []):
-            rec_digits_e164 = self._clean_digits(rec.get("number", ""))
-            rec_digits_nat = self._clean_digits(rec.get("national", ""))
+            rec_sub_e164 = _normalize_subscriber(rec.get("number", ""))
+            rec_sub_nat = _normalize_subscriber(rec.get("national", ""))
 
-            # Match exact digits or suffix matching (e.g. 62812xxx matches 0812xxx)
-            if digits in (rec_digits_e164, rec_digits_nat):
-                return rec
-            if len(digits) >= 9:
-                # Compare trailing 9 digits (handles 0812 vs 62812 vs +62812)
-                if rec_digits_e164.endswith(digits[-9:]) or rec_digits_nat.endswith(digits[-9:]):
-                    return rec
+            if subscriber == rec_sub_e164 or subscriber == rec_sub_nat:
+                return rec, data
 
-        return None
+        return None, data
 
     def add_report(self, number: str, category: str, tag: str, comment: str = "", risk_level: str = "HIGH") -> dict:
         """
         Submits a new crowdsourced scam report or updates existing one.
         """
-        clean_num = number.strip()
-        clean_nat = "0" + self._clean_digits(clean_num)[-10:] if len(self._clean_digits(clean_num)) >= 10 else clean_num
-        clean_e164 = "+62" + clean_nat[1:] if clean_nat.startswith("0") else ("+" + self._clean_digits(clean_num))
-
-        data = self._load_data()
-        existing = self.lookup(clean_num)
+        existing, data = self.lookup(number)
         now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         if existing:
@@ -93,21 +116,28 @@ class ScamDatabase:
                 existing.setdefault("comments", []).append(comment)
             self._save_data(data)
             return existing
-        else:
-            new_record = {
-                "number": clean_e164,
-                "national": clean_nat,
-                "category": category or "OTHER_SUSPICIOUS",
-                "risk_level": risk_level,
-                "reports_count": 1,
-                "tags": [tag] if tag else ["Dilaporkan Pengguna"],
-                "comments": [comment] if comment else [],
-                "last_reported": now_str,
-            }
-            data.setdefault("records", []).append(new_record)
-            data["updated_at"] = datetime.now().strftime("%Y-%m-%d")
-            self._save_data(data)
-            return new_record
+
+        # Build normalized national & E.164 for new record
+        subscriber = _normalize_subscriber(number)
+        clean_nat = "0" + subscriber
+        clean_e164 = "+62" + subscriber
+
+        new_record = {
+            "number": clean_e164,
+            "national": clean_nat,
+            "category": category or "OTHER_SUSPICIOUS",
+            "risk_level": risk_level,
+            "reports_count": 1,
+            "tags": [tag] if tag else ["Dilaporkan Pengguna"],
+            "comments": [comment] if comment else [],
+            "last_reported": now_str,
+        }
+        if data is None:
+            data = self._load_data()
+        data.setdefault("records", []).append(new_record)
+        data["updated_at"] = datetime.now().strftime("%Y-%m-%d")
+        self._save_data(data)
+        return new_record
 
     def list_all_records(self, sort_by_reports: bool = True) -> list:
         data = self._load_data()
@@ -115,4 +145,3 @@ class ScamDatabase:
         if sort_by_reports:
             records = sorted(records, key=lambda x: x.get("reports_count", 0), reverse=True)
         return records
-

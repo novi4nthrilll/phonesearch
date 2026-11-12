@@ -32,9 +32,10 @@ def process_number(target: str, default_country: str = "ID", search_web: bool = 
     risk = calculate_risk(data, osint, scam_db)
     return {"data": data, "osint": osint, "risk": risk}
 
-def report_number_flow(target_number: str = None):
+def report_number_flow(target_number: str = None, show_banner: bool = True):
     """Interactive flow to report a spam/scam phone number."""
-    print_banner()
+    if show_banner:
+        print_banner()
     console.print("🚨 [bold red]Formulir Laporan Nomor Penipuan / Spam Komunitas[/bold red]\n")
     
     if not target_number:
@@ -87,7 +88,7 @@ def run_interactive_mode(default_country: str, search_web: bool = True):
                 console.print("\n[dim]Terima kasih telah menggunakan PhoneSearch! Tetap waspada terhadap kejahatan siber 👋[/dim]")
                 break
             if target.lower() in ("report", "lapor"):
-                report_number_flow()
+                report_number_flow(show_banner=False)
                 continue
             if target.lower() in ("top", "list", "scams"):
                 display_scam_list(scam_db.list_all_records())

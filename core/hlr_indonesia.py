@@ -221,23 +221,30 @@ def lookup_indonesia_operator(national_number: str) -> dict:
     if not cleaned.startswith("0"):
         cleaned = "0" + cleaned
 
+    if len(cleaned) < 3:
+        return {
+            "operator": "Unknown / Terlalu Pendek",
+            "brand": "Unknown",
+            "type": "Unknown",
+            "prefix": cleaned,
+            "estimated_region": "Unknown",
+        }
+
     # 1. Check Mobile Prefixes (4 digits: 08xx)
     prefix_4 = cleaned[:4]
     if prefix_4 in OPERATOR_PREFIXES:
         meta = OPERATOR_PREFIXES[prefix_4].copy()
-        
-        # Check HLR for region estimation
+
+        # Check HLR for region estimation (5 digits are more specific)
         prefix_5 = cleaned[:5]
-        region = HLR_PREFIX_SAMPLES.get(prefix_5)
-        if not region:
-            # Fallback check generic regional pattern if available
-            region = "Indonesia (Wilayah spesifik bervariasi / Alokasi Nasional)"
-        
+        region = HLR_PREFIX_SAMPLES.get(prefix_5, "Indonesia (Wilayah spesifik bervariasi / Alokasi Nasional)")
+
         meta["estimated_region"] = region
         meta["prefix"] = prefix_4
         return meta
 
     # 2. Check Fixed-Line Area Codes (PSTN)
+    # Try longer (4-digit) codes first, then shorter (3-digit)
     for length in (4, 3):
         area_code = cleaned[:length]
         if area_code in AREA_CODES_INDONESIA:
@@ -253,7 +260,6 @@ def lookup_indonesia_operator(national_number: str) -> dict:
         "operator": "Unknown / Unregistered Prefix",
         "brand": "Unknown",
         "type": "Unknown",
-        "prefix": prefix_4,
+        "prefix": cleaned[:4],
         "estimated_region": "Unknown",
     }
-

@@ -23,9 +23,10 @@ def analyze_phone_number(raw_input: str, default_region: str = "ID") -> dict:
     Parses and extracts deep technical, carrier, and geopolitical details for a phone number.
     """
     raw_cleaned = raw_input.strip()
-    
-    # Auto-prefix '+' if starts with international format 62
-    if raw_cleaned.startswith("62") and not raw_cleaned.startswith("+62"):
+
+    # Auto-prefix '+' ONLY if input is exactly country-code + subscriber pattern
+    # e.g. "628123456789" (12-13 digits starting with 62) — NOT short numbers like "6234567"
+    if raw_cleaned.startswith("62") and not raw_cleaned.startswith("+62") and len(raw_cleaned) >= 11:
         raw_cleaned = "+" + raw_cleaned
 
     try:
@@ -40,7 +41,7 @@ def analyze_phone_number(raw_input: str, default_region: str = "ID") -> dict:
     is_valid = phonenumbers.is_valid_number(parsed_num)
     is_possible = phonenumbers.is_possible_number(parsed_num)
     region_code = phonenumbers.region_code_for_number(parsed_num) or "UNKNOWN"
-    
+
     # Standard telecom formats
     e164 = phonenumbers.format_number(parsed_num, phonenumbers.PhoneNumberFormat.E164)
     international = phonenumbers.format_number(parsed_num, phonenumbers.PhoneNumberFormat.INTERNATIONAL)
@@ -51,7 +52,7 @@ def analyze_phone_number(raw_input: str, default_region: str = "ID") -> dict:
     geo_desc = geocoder.description_for_number(parsed_num, "id") or geocoder.description_for_number(parsed_num, "en") or "Unknown"
     carrier_name = carrier.name_for_number(parsed_num, "id") or carrier.name_for_number(parsed_num, "en") or "Unknown"
     tz_list = list(timezone.time_zones_for_number(parsed_num)) or ["Unknown"]
-    
+
     num_type_enum = phonenumbers.number_type(parsed_num)
     type_str = NUMBER_TYPE_MAP.get(num_type_enum, "Unknown")
 
@@ -60,7 +61,7 @@ def analyze_phone_number(raw_input: str, default_region: str = "ID") -> dict:
     if region_code == "ID":
         id_hlr_info = lookup_indonesia_operator(national)
         # If libphonenumber carrier is empty or generic, fill from Indonesian HLR DB
-        if carrier_name == "Unknown" and id_hlr_info["operator"] != "Unknown":
+        if carrier_name == "Unknown" and id_hlr_info["operator"] not in ("Unknown", "Unknown / Unregistered Prefix", "Unknown / Terlalu Pendek"):
             carrier_name = id_hlr_info["operator"]
 
     return {
@@ -83,4 +84,3 @@ def analyze_phone_number(raw_input: str, default_region: str = "ID") -> dict:
         "number_type": type_str,
         "indonesia_hlr": id_hlr_info,
     }
-
