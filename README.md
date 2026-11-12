@@ -22,11 +22,28 @@ Tools intelijen nomor telepon berbasis CLI interaktif untuk validasi standar tel
    - **Direct Platform Connect:** Buka WhatsApp Direct Chat (`wa.me`) dan profil Telegram tanpa simpan kontak.
    - **Public Reputation Repositories:** Link lookup cepat ke Truecaller, Sync.me, dan Kredibel.co.id.
    - **Automated Google Dorks:** Query otomatis untuk melacak jejak nomor di media sosial (FB, IG, X, LinkedIn, TikTok), file leak (PDF/Excel/Database), dan forum jual-beli.
+   - **Live Web Reconnaissance:** Pencarian otomatis jejak nomor di search engine publik (DuckDuckGo / Google) dengan parsing judul, snippet, dan URL terkait langsung ke terminal.
 
 4. **CLI User Experience (Rich TUI):**
    - Mode Interaktif dengan live terminal prompt.
    - Mode scan langsung per nomor.
    - Mode batch file (`-f`) dan export JSON (`-o`).
+   - Flag `--no-web` untuk mode cepat offline tanpa web crawling.
+
+---
+
+## 📦 Instalasi Dependensi
+
+Pastikan modul yang dibutuhkan sudah terinstall (terutama jika menggunakan Conda / Virtualenv):
+
+```bash
+pip install -r requirements.txt
+```
+
+Atau install manual:
+```bash
+pip install phonenumbers rich requests beautifulsoup4
+```
 
 ---
 

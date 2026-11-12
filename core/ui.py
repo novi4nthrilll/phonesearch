@@ -103,3 +103,26 @@ def display_analysis(data: dict, osint: dict):
             
         console.print(dork_table)
 
+    # 6. Live Web Reconnaissance (Hasil Pencarian Langsung dari Internet)
+    if osint and "live_web" in osint:
+        live = osint["live_web"]
+        if live.get("connected") and live.get("categories"):
+            console.print("\n🌐 [bold green]Hasil Pencarian Jejak Langsung di Internet (Live Search Recon):[/bold green]")
+            for cat_name, items in live["categories"].items():
+                cat_table = Table(box=box.SIMPLE_HEAD, expand=True, title=f"[bold cyan]📁 {cat_name}[/bold cyan]")
+                cat_table.add_column("Judul / Snippet", style="white", ratio=3)
+                cat_table.add_column("Tautan Sumber", style="blue", ratio=2)
+
+                for itm in items:
+                    content_text = f"[bold]{itm['title']}[/bold]\n[dim]{itm['snippet']}[/dim]"
+                    cat_table.add_row(content_text, itm['url'])
+                console.print(cat_table)
+        elif not live.get("connected"):
+            console.print(Panel(
+                "[yellow]Mode Offline / Tidak terhubung ke live web search.[/yellow]\n"
+                "[dim]Gunakan daftar Google Dorks di atas untuk membuka hasil pencarian lengkap secara langsung di browser lo.[/dim]",
+                title="[bold yellow]ℹ️ Info Live Search[/bold yellow]",
+                border_style="yellow"
+            ))
+
+
